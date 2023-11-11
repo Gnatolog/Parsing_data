@@ -54,19 +54,21 @@ def test(url, driver, type_list):
                 if contact % 2 == 0:
                     if contacts_list[contact].text == "Adress:":
                         key.append('addresses_of_exchange_offices')
+                    elif contacts_list[contact].text == "Place of residence:":
+                        key.append('legal_entity_address')
                     else:
                         key.append(contacts_list[contact].text)
                 else:
                     value.append(contacts_list[contact].text)
             if i < len(data):
-                key.append("data_published")
+                key.append("data_publish")
                 value.append(data[0].text)
             for items in range(len(keys)):
                 if keys[items].text == "Statutory name:":
                     key.append('name')
                     value.append(values[items].text.replace("\"", ""))
                 elif keys[items].text == "Statutory seat:":
-                    key.append('legal_entity_address')
+                    key.append('addresses_of_exchange_officess')
                     value.append(values[items].text.replace("\"", ""))
                 elif keys[items].text == "LEI code:":
                     key.append('сbr_license_id')

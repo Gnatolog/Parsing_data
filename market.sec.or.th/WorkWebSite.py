@@ -56,7 +56,7 @@ def test(url, driver, type_list):
 
         for items in range(len(list_data)):
             if items != 0:
-                key.append("data_published")
+                key.append("data_publish")
                 val_dat = list_data[items].find_elements(By.CSS_SELECTOR, ".RgCol_Center")
                 value.append(val_dat[0].text)
                 key.append("name")

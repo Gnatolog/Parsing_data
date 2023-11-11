@@ -51,7 +51,7 @@ def parsing(url, driver, type_list):
     buton_number = 0
     buton_number_next = 0
 
-    while page_number < 13:
+    while page_number < 1:
         print("Button number", buton_number)
         time.sleep(10)
         if buton_number != 0:
@@ -68,11 +68,11 @@ def parsing(url, driver, type_list):
 
         if buton_number <= 3:
             for k in range(len(name_list[buton_number])):
-                key.extend(["name", "data_published"])
+                key.extend(["name", "data_publish"])
                 value.extend([name_list[buton_number][k].text, data_list[buton_number][k].text])
         else:
             for x in range(len(name_list_next[buton_number_next]) - 1):
-                key.extend(["name", "data_published"])
+                key.extend(["name", "data_publish"])
                 value.extend([name_list_next[buton_number_next][x].get_attribute("title"),
                               data_list_next[buton_number_next][x].text])
 
@@ -85,8 +85,8 @@ def parsing(url, driver, type_list):
 
         # for keys in key:
         #     print("Key:", keys)
-        for values in value:
-            print("Values:", values)
+        # for values in value:
+        #     print("Values:", values)
 
         for s in range(len(key)):
             if count != 2:

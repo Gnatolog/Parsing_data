@@ -62,41 +62,8 @@ def test(url, driver, type_list):
         list_data = change_using(driver, ".text-link-std ")
         time.sleep(5)
 
-        # region test
-        # test_link = list_data[0].get_attribute("href")
-        # driver.get(test_link)
-        # for k in range(len(value_items)):
-        #     print("Add key", key_items[k].text)
-        #
-        #     if key_items[k].text == "Name":
-        #         key.append("name")
-        #         print("Add value", value_items[k].text)
-        #         value.append(value_items[k].text)
-        #
-        #     elif key_items[k].text == "Internet":
-        #         key.append("social_networks")
-        #         print("Add value", value_items[k].text)
-        #         value.append(value_items[k].text)
-        #
-        #     elif key_items[k].text == "Address":
-        #         key.append("legal_entity_address")
-        #         print("Add value", value_items[k].text)
-        #         value.append(value_items[k].text)
-        #
-        #     elif key_items[k].text == "Remarks":
-        #         key.append(key_items[k].text)
-        #         translation = translator.translate(value_items[k].text, dest='ru')
-        #         value.append(translation.text)
-        #
-        #     else:
-        #         key.append(key_items[k].text)
-        #         print("Add value", value_items[k].text)
-        #         value.append(value_items[k].text)
-        # endregion
-
         for i in list_data:
             read_files.append(i.get_attribute("href"))
-
         for j in read_files:
             driver.get(j)
             count_organization += 1
@@ -115,26 +82,35 @@ def test(url, driver, type_list):
 
                 elif key_items[k].text == "Address":
                     key.append("legal_entity_address")
-                    value.append(value_items[k].text)
+                    translation = translator.translate(value_items[k].text, dest='ru')
+                    value.append(translation.text)
 
-                elif key_items[k].text == "Remarks":
+                elif key_items[k].text == "Commercial register":
                     key.append(key_items[k].text)
                     translation = translator.translate(value_items[k].text, dest='ru')
                     value.append(translation.text)
+
+                elif key_items[k].text == "Remarks":
+                    key.append(key_items[k].text)
+                    if value_items[k].text == "-":
+                        value.append("")
+                    else:
+                        value.append(value_items[k].text)
+                elif key_items[k].text == "Domicile":
+                    key.append(key_items[k].text)
+                    if value_items[k].text == "-":
+                        value.append("")
+                    else:
+                        value.append(value_items[k].text)
 
                 else:
                     key.append(key_items[k].text)
                     value.append(value_items[k].text)
 
         count = 0
-        print("Len Key", len(key))
-        print("Len Value", len(value))
+        # print("Len Key", len(key))
+        # print("Len Value", len(value))
         chek = len(key)
-
-        # for keys in key:
-        #     print("Key:", keys)
-        # for values in value:
-        #     print("Values:", values)
 
         for s in range(len(key)):
             if count != 6:

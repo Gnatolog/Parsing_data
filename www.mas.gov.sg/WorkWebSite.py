@@ -1,3 +1,4 @@
+import re
 import time
 
 from selenium.webdriver.common.by import By
@@ -40,13 +41,24 @@ def test(url, driver, type_list):
         for i in range(len(list_data)):
             # print(data[i].text)
             if i < len(data):
-                key.append('data_published')
-                value.append(data[i].text)
+                key.append('data_publish')
+                split_data = data[i].text.split(":")
+                value.append(split_data[1])
             else:
-                key.append('data_published')
-                value.append("null")
-            key.append('name')
-            value.append(name[i].text)
+                key.append('data_publish')
+                value.append("")
+
+            items = name[i].text
+            pattern = r"(?:https?:\/\/|ftps?:\/\/|www\.)(?:(?![.,?!;:()]*(?:\s|$))[^\s]){2,}"
+            url2 = re.findall(pattern, items)
+
+            if url2:
+                key.append("social_networks")
+                value.append(url2[0])
+            else:
+                key.append('name')
+                value.append(name[i].text)
+
             button_check = list_data[i].find_elements(By.CSS_SELECTOR, "button")
             if len(button_check) != 0:
                 if buttn_number <= len(button):

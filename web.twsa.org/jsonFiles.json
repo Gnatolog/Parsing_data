@@ -1,11 +1,28 @@
 [
     {
-        "Выдавшая организация:": "FCA",
-        "Дата выпуска:": "2023/09/11",
-        "Регион/Страна:": "Европа / Великобритания (Великобритания)",
-        "Участвующие организация/люди:": "Супер Стар Финанс / superstarfinance.co.uk",
-        "Соответствующая информация (информация для примечаний):": "Предупреждение Управления финансового надзора Великобритании (FCA): Мы считаем, что эта компания предоставляет финансовые услуги или продукты в Великобритании без нашего разрешения.\n\nНазвание компании: Super Star Finance / superstarfinance.co.uk\nАдрес: 77 Queen Victoria Street, Лондон, ВЕЛИКОБРИТАНИЯ, EC4V 4AY\nТелефон: 02030930281\nЭлектронная почта: info@superstarfinance.co.uk.\nСайт: superstarfinance.co.uk.",
-        "Другие:": "",
+        "organizational_and_legal_forms": "FCA",
+        "date_publish": "2023/08/31",
+        "addresses_of_exchange_offices": "Европа / Великобритания (Великобритания)",
+        "name": " Trade Rescue ",
+        "remarks": "Предупреждение Управления финансового надзора Великобритании (FCA): Мы считаем, что эта компания предоставляет финансовые услуги или продукты в Великобритании без нашего разрешения.",
+        "organizational_and_legal_form": " Karduansmakargatan 2C, Стокгольм, ШВЕЦИЯ, 111 52. ",
+        "email": " jamesmorrison@traderescue.net, support@trade-rescue.com ",
+        "social_networks": " traderescue.net, trade-rescue.com. ",
+        "other": "",
+        "type": "black_list",
+        "source": "http://web.twsa.org.tw/alert/Default.aspx"
+    },
+    {
+        "organizational_and_legal_forms": "FCA",
+        "date_publish": "2023/08/31",
+        "addresses_of_exchange_offices": "Европа / Великобритания (Великобритания)",
+        "name": " HUBSCAPITAL.ORG / HUBSCAPITAL ",
+        "remarks": "Предупреждение Управления финансового надзора Великобритании (FCA): Мы считаем, что эта компания предоставляет финансовые услуги или продукты в Великобритании без нашего разрешения.",
+        "organizational_and_legal_form": " 84 Грейт-Саффолк-стрит, Лондон, ВЕЛИКОБРИТАНИЯ, SE1 0BL ",
+        "email": " support@hubscapital.org. ",
+        "social_networks": " https ",
+        "other": "",
+        "number": " +447438149339 ",
         "type": "black_list",
         "source": "http://web.twsa.org.tw/alert/Default.aspx"
     }
