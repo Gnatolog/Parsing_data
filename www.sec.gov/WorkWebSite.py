@@ -43,7 +43,7 @@ def parsing(url, driver, type_list):
         if j != 0:
             data_links.append(data_published_link[j][0].get_attribute("href"))
 
-    while page_number < len(data_links):
+    while page_number < len(data_links):       #10 для тестов
         print(data_links[page_number])
         driver.get(data_links[page_number])
         count_organization += 1
@@ -64,24 +64,46 @@ def parsing(url, driver, type_list):
                     if len(items) == 1 and len(template[x - 1].split(":")) == 1:
                         items_adress = (template[x - 1] + " " + template[x])
                         key.append("legal_entity_address")
-                        value.append(items_adress)
+                        translation = translator.translate(items_adress, dest='ru')
+                        value.append(translation.text)
                     else:
                         items_adress = (template[x - 1])
                         key.append("legal_entity_address")
-                        value.append(items_adress)
+                        translation = translator.translate(items_adress, dest='ru')
+                        value.append(translation.text)
 
                 if len(items) > 1:
                     if items[0] == "Phone":
                         key.append("phones")
+                        if items[1] == " None" or items[1] == "  None":
+                            value.append("")
+                        else:
+                            value.append(items[1])
+
                     elif items[0] == "Website":
                         key.append("social_networks")
+                        if items[1] == ' http':
+                            value.append('http' + items[2])
+                        elif items[1] == ' https':
+                            value.append('https' + items[2])
+                        else:
+                            value.append(items[1])
+
                     elif items[0] == "Email":
                         key.append("email")
+                        if items[1] == " None" or items[1] == "  None":
+                            value.append("")
+                        else:
+                            value.append(items[1])
+                    elif items[0] == "Fax":
+                        key.append('fax')
+                        if items[1] == " None" or items[1] == "  None":
+                            value.append("")
+                        else:
+                            value.append(items[1])
 
-                    if items[1] == ' http':
-                        value.append('http' + items[2])
-                    else:
-                        value.append(items[1])
+
+
 
         count = 1
         # print("Len Key", len(key))

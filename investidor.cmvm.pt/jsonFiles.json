@@ -1,0 +1,32 @@
+[
+    {
+        "name": "CMVM alerta os investidores sobre Cláudio André da Silva Teixeira",
+        "social_networks": "https://www.instagram.com/claudioandreofficial/",
+        "type": "black_list",
+        "source": "https://investidor.cmvm.pt/PInvestidor/Content?Input=2261423276FE736012E5188493A75BA7DF245F268FA18A136059316E2C3550AE "
+    },
+    {
+        "name": "CMVM alerta os investidores sobre Commercewealth",
+        "social_networks": "https://pt.commercewealth.com/",
+        "type": "black_list",
+        "source": "https://investidor.cmvm.pt/PInvestidor/Content?Input=2261423276FE736012E5188493A75BA7DF245F268FA18A136059316E2C3550AE "
+    },
+    {
+        "name": "CMVM alerta os investidores sobre a Umarkets",
+        "social_networks": "https://umarkets.net/",
+        "type": "black_list",
+        "source": "https://investidor.cmvm.pt/PInvestidor/Content?Input=2261423276FE736012E5188493A75BA7DF245F268FA18A136059316E2C3550AE "
+    },
+    {
+        "name": "CMVM alerta os investidores sobre Luís André de Goes Ribeiro da Cunha",
+        "social_networks": "https://www.cmvm.pt/PInstitucional/Content?Input=7FDEB614BB37BB7F9236A4239A55D7D7B3621FD753AC96CE8E332FC41998D293",
+        "type": "black_list",
+        "source": "https://investidor.cmvm.pt/PInvestidor/Content?Input=2261423276FE736012E5188493A75BA7DF245F268FA18A136059316E2C3550AE "
+    },
+    {
+        "name": "CMVM alerta os investidores sobre a InvDaily/Advanced Software Solutions Lda",
+        "social_networks": "https://www.invdaily.com/",
+        "type": "black_list",
+        "source": "https://investidor.cmvm.pt/PInvestidor/Content?Input=2261423276FE736012E5188493A75BA7DF245F268FA18A136059316E2C3550AE "
+    }
+]

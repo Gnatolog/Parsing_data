@@ -1,6 +1,7 @@
 import time
 from googletrans import Translator, constants
 from selenium.webdriver.common.by import By
+import re
 
 
 def change_using(driver, element_name, ):
@@ -66,17 +67,37 @@ def test(url, driver, type_list):
         for k in range(len(all_date)):
 
             if count_data == 0:
-                key.append("data_published")
+                key.append("data_publish")
                 value.append(all_date[k])
                 count_data += 1
 
             elif count_data == 1:
-                key.append("name")
-                value.append(all_date[k])
+                items = all_date[k]
+                pattern = r"(?:https?:\/\/|ftps?:\/\/|www\.)(?:(?![.,?!;:()]*(?:\s|$))[^\s]){2,}"
+                url = re.findall(pattern, items)
+                items2 = all_date[k].split(" ")
                 count_data += 1
+                if len(items2) == 2:
+                    print(items2)
+                    key.append("name")
+                    value.append(items2[0].replace("\"", " "))
+                    key.append("social_networks")
+                    if len(url) == 0:
+                        value.append(items2[1])
+                    else:
+                        value.append(url[0])
+                else:
+                    if url:
+                        print(url)
+                        key.append("social_networks")
+                        value.append(url[0])
+                    else:
+                        key.append("name")
+                        text = all_date[k].replace("\"", "")
+                        value.append(text)
 
             elif count_data == 2:
-                key.append("description")
+                key.append("remarks")
                 translation = translator.translate(all_date[k], dest='ru')
                 value.append(translation.text)
                 count_data = 0
@@ -104,9 +125,9 @@ def test(url, driver, type_list):
                     count = 0
 
         page_number += 1
-        print("Page number", page_number)
-        click_button(driver, ".paginate_button next", 3)
-        print("click")
-        time.sleep(3)
+        # print("Page number", page_number)
+        # click_button(driver, ".paginate_button next", 3)
+        # print("click")
+        # time.sleep(3)
 
     return all_dictonary
