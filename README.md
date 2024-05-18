@@ -14,6 +14,6 @@ ___
 * Язык программирования: Python
 * Selenium
 * BeautifulSoup
-* 
+* Для перевода текста: Googletrans 
 
 
